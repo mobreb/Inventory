@@ -1,0 +1,16 @@
+{% extends 'goods/base.html' %}
+{% load humanize %}
+
+{% block content %}
+
+<a href="{%url 'item-create' %}" role="button">Create New Card</a>
+
+{% for items in goods_list %}
+{% ifchanged %}
+<h3> 📦 {{forloop.counter | ordinal}} order  </h3>
+
+{% endifchanged %}
+{%include 'goods/include/box.html'%}
+{%endfor%}
+
+{% endblock %}

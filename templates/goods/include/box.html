@@ -1,0 +1,11 @@
+{% load humanize %}
+<article>
+  <h4>{{ items.item_name }}</h4>
+  <h5>{{ items.quantity }} </h5>
+  <h6><a href="{%url 'item-update' items.pk  %}" role="button">Edit</a></h6>
+
+
+  <footer>
+    <small>Created: {{ items.date_created|naturaltime }}</small>
+  </footer>
+</article>
